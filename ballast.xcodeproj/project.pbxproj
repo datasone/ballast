@@ -341,10 +341,10 @@
 				);
 				INFOPLIST_FILE = ballast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nz.jamsinclair.ballast;
+				PRODUCT_BUNDLE_IDENTIFIER = moe.datasone.ballast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -362,10 +362,10 @@
 				);
 				INFOPLIST_FILE = ballast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nz.jamsinclair.ballast;
+				PRODUCT_BUNDLE_IDENTIFIER = moe.datasone.ballast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

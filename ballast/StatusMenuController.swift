@@ -27,6 +27,7 @@ class StatusMenuController: NSObject {
     @IBOutlet weak var balanceCorrectedItem: NSMenuItem!
     @IBOutlet weak var disableBallastItem: NSMenuItem!
     @IBOutlet weak var launchAtLoginItem: NSMenuItem!
+    @IBOutlet weak var lowestVolumeItem: NSMenuItem!
     @IBOutlet weak var aboutWindow: NSWindow!
     @IBOutlet weak var runningInBackgroundWindow: NSWindow!
     @IBOutlet weak var runningInBackgroundWindowIcon: NSImageView!
@@ -42,6 +43,7 @@ class StatusMenuController: NSObject {
     // User Defaults Keys
     let balanceCorrectedKey = "balanceChanged"
     let runInBackgroundKey = "runInBackground"
+    let lowestVolumeKey = "lowestVolume"
     
     deinit {
         balanceObserver.stopObserving()
@@ -75,6 +77,10 @@ class StatusMenuController: NSObject {
             self.toggleRunInBackground(true);
         }
 
+        if (UserDefaults.standard.bool(forKey: lowestVolumeKey)) {
+            lowestVolumeItem.state = NSControl.StateValue.on
+        }
+        
         self.updateLaunchAtLoginItemState()
         self.startBalanceObserving()
         self.updateBalanceCorrectedItemTitle()
@@ -213,6 +219,12 @@ class StatusMenuController: NSObject {
             os_log("Github link was successfully opened", type: .debug)
             #endif
         }
+    }
+    
+    @IBAction func lowestVolumeToggled(_ sender: NSMenuItem) {
+        let isLowestVolume = sender.state == NSControl.StateValue.on
+        sender.state = isLowestVolume ? NSControl.StateValue.off : NSControl.StateValue.on
+        UserDefaults.standard.set(!isLowestVolume, forKey: lowestVolumeKey)
     }
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {

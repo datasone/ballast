@@ -1,5 +1,11 @@
 # Ballast
 
+This project is a fork of [jamsinclair's ballast](https://github.com/jamsinclair/ballast), it adds an option to balance the volume to the lowest one in channel volumes to resolve a bug that some USB DAC device's left channel volume will sometimes be set to maximum (1.0) automatically, which is often too loud. Prebuilt app can be found in the [latest release page](https://github.com/datasone/ballast/releases/latest).
+
+Below is the original project's markdown
+
+--------------------
+
 ### Update 2019-05-29
 
 Tunabelly Software are now releasing their software for free (Previously paid app). They have a more polished and reliable app than this project. You may want to use their great work:
